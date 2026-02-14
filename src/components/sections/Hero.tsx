@@ -28,18 +28,18 @@ const Hero = () => {
             and English language teaching.
           </p>
           <div className="flex flex-wrap gap-4">
-            <a
-              href="#contact"
+            <button
+              onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
               className="inline-flex items-center px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
             >
               Get in Touch
-            </a>
-            <a
-              href="#showcase"
+            </button>
+            <button
+              onClick={() => document.querySelector("#showcase")?.scrollIntoView({ behavior: "smooth" })}
               className="inline-flex items-center px-6 py-3 rounded-lg border border-border text-foreground font-medium hover:bg-accent transition-colors"
             >
               See My Work
-            </a>
+            </button>
           </div>
         </motion.div>
 
