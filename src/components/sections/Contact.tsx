@@ -125,7 +125,7 @@ const Contact = () => {
                 <MessageCircle size={18} />
               </a>
               <a href="https://eitaa.com/maminrezai" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-accent flex items-center justify-center text-muted-foreground hover:text-primary transition-colors" title="Eita">
-                <span className="text-xs font-bold">E</span>
+                <span className="text-[8px] font-bold leading-none">Eita</span>
               </a>
             </div>
           </motion.div>
