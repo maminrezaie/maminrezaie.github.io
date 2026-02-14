@@ -14,6 +14,7 @@ const skills = [
   "Critical thinking and speculating",
   "English ↔ Persian translation",
   "English & Persian essay writing",
+  "Web design (WordPress / WooCommerce)",
   "Basic computer, web, and social media skills",
 ];
 

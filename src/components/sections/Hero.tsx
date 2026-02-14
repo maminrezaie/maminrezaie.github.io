@@ -15,7 +15,7 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <p className="text-primary font-medium tracking-widest uppercase text-sm mb-4">
-            English Graduate • Scholar • Translator
+            English Graduate • Scholar • Translator • Web Designer
           </p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight text-foreground mb-6">
             Mohammad Amin
@@ -35,10 +35,10 @@ const Hero = () => {
               Get in Touch
             </a>
             <a
-              href="#publications"
+              href="#showcase"
               className="inline-flex items-center px-6 py-3 rounded-lg border border-border text-foreground font-medium hover:bg-accent transition-colors"
             >
-              See Publications
+              See My Work
             </a>
           </div>
         </motion.div>
