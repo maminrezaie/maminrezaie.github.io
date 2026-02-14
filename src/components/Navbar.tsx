@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
@@ -55,6 +55,16 @@ const Navbar = () => {
               </button>
             </li>
           ))}
+          <li>
+            <a
+              href="/docs/resume.pdf"
+              download
+              className="inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              <Download size={14} />
+              Download CV
+            </a>
+          </li>
         </ul>
 
         {/* Mobile toggle */}
@@ -87,6 +97,16 @@ const Navbar = () => {
                   </button>
                 </li>
               ))}
+              <li>
+                <a
+                  href="/docs/resume.pdf"
+                  download
+                  className="inline-flex items-center gap-2 text-base font-medium text-primary"
+                >
+                  <Download size={16} />
+                  Download CV
+                </a>
+              </li>
             </ul>
           </motion.div>
         )}
