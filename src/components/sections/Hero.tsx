@@ -50,12 +50,17 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex justify-center"
         >
-          <div className="relative w-72 h-72 md:w-96 md:h-96">
+          <div className="relative w-72 h-72 md:w-96 md:h-96 group cursor-pointer">
             <div className="absolute inset-0 rounded-2xl bg-primary/20 rotate-6" />
             <img
               src="/images/portrait-1.jpg"
               alt="Mohammad Amin Rezaie"
               className="relative rounded-2xl object-cover w-full h-full shadow-xl"
+            />
+            <img
+              src="/images/portrait-4.jpg"
+              alt="Mohammad Amin Rezaie"
+              className="absolute inset-0 rounded-2xl object-cover w-full h-full shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
             />
           </div>
         </motion.div>
