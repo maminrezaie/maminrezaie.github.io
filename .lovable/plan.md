@@ -1,32 +1,22 @@
 
 
-# Blog Page — WordPress-Ready with Placeholder Content
+# Deploy to GitHub Pages + Rename "Profile" to "Bio"
 
-Since you'll set up the WordPress connection later, I'll create a blog page now with static placeholder posts that matches your portfolio's design. When your WordPress site is ready, we can swap in the API integration.
+Your GitHub Pages is already set up with the default `pages-build-deployment` workflow. Now I need to make two code changes:
 
-## What You'll Get
+## Changes
 
-- A new `/blog` route with a clean blog listing page
-- A `/blog/:slug` route for individual post detail pages
-- 3 placeholder blog posts with sample content
-- A "Blog" link added to the Navbar
-- Design consistent with the rest of your portfolio (Playfair Display headings, warm color scheme, cards)
-- Fully responsive layout (single column on mobile, grid on larger screens)
+### 1. Switch to HashRouter (`src/App.tsx`)
+Replace `BrowserRouter` with `HashRouter` so routes like `/blog` work on GitHub Pages (URLs become `/#/blog`).
 
-## Technical Details
+### 2. Add GitHub Actions build workflow (`.github/workflows/deploy.yml`)
+Create a workflow that builds your Vite app and deploys the `dist/` folder to GitHub Pages. This replaces the default Jekyll-based deployment with a proper Node.js build step.
 
-### New files:
-- **`src/pages/Blog.tsx`** — Blog listing page with card grid showing post title, excerpt, date, and category
-- **`src/pages/BlogPost.tsx`** — Individual post page with back navigation
-- **`src/data/blogPosts.ts`** — Static placeholder posts data (easily replaceable with WordPress API later)
+### 3. Rename "Profile" to "Bio" (`src/components/sections/About.tsx`)
+Change the heading from "Profile" to "Bio".
 
-### Files to modify:
-- **`src/App.tsx`** — Add `/blog` and `/blog/:slug` routes
-- **`src/components/Navbar.tsx`** — Add "Blog" link to navigation (desktop and mobile)
+## After these changes
+- Push will trigger the new GitHub Actions workflow
+- Your site will be live at `https://maminrezaie.github.io/`
+- Blog will work at `https://maminrezaie.github.io/#/blog`
 
-### Placeholder posts will include:
-1. "The Art of Literary Translation" 
-2. "Critical Theory in Modern Education"
-3. "Bridging Cultures Through Language"
-
-Each with a title, date, category, excerpt, and body text. When you're ready to connect WordPress, we'll replace the static data with `fetch` calls to your WordPress REST API (`/wp-json/wp/v2/posts`).
