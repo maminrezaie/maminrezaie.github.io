@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Download } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { NavLink } from "@/components/NavLink";
 
 const links = [
   { label: "About", href: "#about" },
@@ -14,6 +16,9 @@ const links = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -23,8 +28,12 @@ const Navbar = () => {
 
   const handleClick = (href: string) => {
     setOpen(false);
-    const el = document.querySelector(href);
-    el?.scrollIntoView({ behavior: "smooth" });
+    if (isHome) {
+      const el = document.querySelector(href);
+      el?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/" + href);
+    }
   };
 
   return (
@@ -55,6 +64,15 @@ const Navbar = () => {
               </button>
             </li>
           ))}
+          <li>
+            <NavLink
+              to="/blog"
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+              activeClassName="text-primary"
+            >
+              Blog
+            </NavLink>
+          </li>
           <li>
             <a
               href="/docs/resume.pdf"
@@ -97,6 +115,16 @@ const Navbar = () => {
                   </button>
                 </li>
               ))}
+              <li>
+                <NavLink
+                  to="/blog"
+                  onClick={() => setOpen(false)}
+                  className="text-base font-medium text-muted-foreground hover:text-primary transition-colors"
+                  activeClassName="text-primary"
+                >
+                  Blog
+                </NavLink>
+              </li>
               <li>
                 <a
                   href="/docs/resume.pdf"
