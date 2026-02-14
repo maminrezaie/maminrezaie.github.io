@@ -4,6 +4,15 @@ import { Briefcase } from "lucide-react";
 
 const experience = [
   {
+    role: "Freelance Web Designer",
+    org: "Independent",
+    period: "2020 – Present",
+    bullets: [
+      "Design and build e-commerce websites using WordPress and WooCommerce.",
+      "Deliver responsive, user-friendly storefronts for small businesses.",
+    ],
+  },
+  {
     role: "English Teacher (Pre-Intermediate & Intermediate)",
     org: "Shokouh Institute of Language Learning, Gonābād, Iran",
     period: "2017 – 2018",
