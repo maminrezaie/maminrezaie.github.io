@@ -32,7 +32,11 @@ const Navbar = () => {
       const el = document.querySelector(href);
       el?.scrollIntoView({ behavior: "smooth" });
     } else {
-      navigate("/" + href);
+      navigate("/");
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        el?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
     }
   };
 
