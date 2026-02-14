@@ -1,22 +1,16 @@
 
 
-# Deploy to GitHub Pages + Rename "Profile" to "Bio"
+# Fix GitHub Actions Build Failure
 
-Your GitHub Pages is already set up with the default `pages-build-deployment` workflow. Now I need to make two code changes:
+## Problem
+The build fails because the workflow uses `npm ci`, which requires a valid `package-lock.json` file. Your project was set up with Bun (`bun.lockb`), so the lock file is either missing or empty.
 
-## Changes
+## Fix
+Update `.github/workflows/deploy.yml` to use `npm install` instead of `npm ci`. This will generate the lock file on the fly and install all dependencies correctly.
 
-### 1. Switch to HashRouter (`src/App.tsx`)
-Replace `BrowserRouter` with `HashRouter` so routes like `/blog` work on GitHub Pages (URLs become `/#/blog`).
+### Change in `.github/workflows/deploy.yml`:
+- Replace `npm ci` with `npm install` (line 27)
 
-### 2. Add GitHub Actions build workflow (`.github/workflows/deploy.yml`)
-Create a workflow that builds your Vite app and deploys the `dist/` folder to GitHub Pages. This replaces the default Jekyll-based deployment with a proper Node.js build step.
-
-### 3. Rename "Profile" to "Bio" (`src/components/sections/About.tsx`)
-Change the heading from "Profile" to "Bio".
-
-## After these changes
-- Push will trigger the new GitHub Actions workflow
-- Your site will be live at `https://maminrezaie.github.io/`
-- Blog will work at `https://maminrezaie.github.io/#/blog`
+## After the fix
+Once pushed, re-run the failed workflow (or it will auto-trigger on push). Your site should build and deploy to `https://maminrezaie.github.io/`.
 
