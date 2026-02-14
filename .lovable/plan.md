@@ -1,66 +1,49 @@
-# Personal Portfolio — Complete Redesign
 
-A modern, visually striking portfolio for Mohammad Amin Rezaie, built from scratch with a fresh design language while preserving all existing content.
+
+# Portfolio Updates
+
+Multiple content and visual changes across the site.
 
 ---
 
-Connect to my existing [maminrezaie.github.io](http://maminrezaie.github.io) repo directly if possible, if not possible continue with the currect repo.
+## 1. Portrait Photos
+- Copy `user-uploads://portrait-1.jpg` and `user-uploads://portrait-4.jpg` to `public/images/` to replace the current portraits
+- Update Hero section to use the new portrait (portrait-1.jpg as primary since it was described as "the first" = last attached)
 
-## 1. Design Direction
+## 2. Hero Section Updates
+- Add "Web Designer" to the subtitle/tagline (e.g., "English Graduate . Scholar . Translator . Web Designer")
+- Add a "See My Work" button linking to the `#showcase` section
 
-- **Fresh, modern aesthetic** — clean layout with generous whitespace, smooth animations, and a refined color palette (not necessarily dark — could be light with bold accent colors, or a sophisticated dark/light combo)
-- Elegant typography and subtle micro-interactions (hover effects, scroll animations)
-- Fully responsive across desktop, tablet, and mobile
+## 3. About / Skills Section
+- Add "Web design (WordPress / WooCommerce)" to the skills list
 
-## 2. Pages & Sections (Single-Page Scrolling Layout)
+## 4. Showcase Section Updates
+- Update Rezaie Saffron URL from `rezaiesaffron.ir` to `rezaei-saffron.ir`
+- Add English version of Rezaei Saffron as a separate project card linking to `https://rezaei-saffron.ir/en/`
+- Copy the 3 uploaded screenshots (`Screenshot1.png`, `Screenshot2.png`, `Screenshot3.png`) to `public/images/` and embed them as preview images in the showcase cards
+  - Screenshot1 = Rezaei Saffron (Persian)
+  - Screenshot2 = Rezaei Saffron (English)
+  - Screenshot3 = Gandomak Shop
 
-### Hero Section
+## 5. Experience Section
+- Add a new entry: "Freelance Web Designer" with expertise in WordPress/WooCommerce site building
 
-- Full-viewport intro with your name, title ("PhD Candidate in Computer Science"), and a brief tagline
-- Portrait photo prominently featured
-- Smooth scroll-down indicator
+## 6. Reduce Section Spacing
+- Reduce `section-padding` vertical padding (currently `py-20 lg:py-28`) to something tighter like `py-12 lg:py-16`
 
-### About
+## 7. Contact Form
+- Update the Formspree endpoint from `xpwzgkjd` to `xlgwbdgo`
 
-- Bio text with your research interests and background
-- Clean, readable layout
+---
 
-### Education
+## Technical Details
 
-- Timeline or card-based layout showing your academic history (Concordia University, University of Tehran, etc.)  
-add PhD candidate at SRBU (Azad university sience and research branch) since 2021 for "English Language and Literature major)
+### Files to modify:
+- **`public/images/`** -- copy 5 uploaded files (2 portraits + 3 screenshots)
+- **`src/components/sections/Hero.tsx`** -- update tagline, add "See My Work" button, update portrait src
+- **`src/components/sections/About.tsx`** -- add web design skill
+- **`src/components/sections/Showcase.tsx`** -- update saffron URL, add English saffron card, embed screenshot images in each card
+- **`src/components/sections/Experience.tsx`** -- add freelance web designer entry
+- **`src/components/sections/Contact.tsx`** -- change Formspree endpoint to `xlgwbdgo`
+- **`src/index.css`** -- reduce `section-padding` vertical values
 
-### Experience
-
-- Professional experience displayed in a modern timeline or grid format
-- Research and teaching positions highlighted
-
-### Publications
-
-- List of your publications with expandable details
-- Links to papers where available
-
-### Showcase / Projects
-
-- Visual cards or gallery for your projects and research work
-- Images/screenshots where applicable
-
-### Contact
-
-- **Working contact form** powered by Formspree
-- Links to your email, LinkedIn, Google Scholar, and GitHub
-- CV download button
-
-## 3. Navigation
-
-- Sticky top navigation bar with smooth scroll to sections
-- Mobile hamburger menu
-
-## 4. Assets
-
-- You'll upload your portrait photos and CV PDF after implementation
-- Placeholder images used initially
-
-## 5. Contact Form Integration
-
-- Formspree integration for the contact form — you'll provide your Formspree endpoint or email, and messages will be delivered to your inbox
