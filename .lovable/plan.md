@@ -1,42 +1,32 @@
 
-# Portfolio Updates — CV, Portrait Hover, Social Media & Mobile
 
-## 1. Download CV Button in Navbar
-- Copy the uploaded PDF (`Updated-Resume-M.A.Rezaee_022300.pdf`) to `public/docs/resume.pdf`
-- Add a "Download CV" button/link to the Navbar (visible on desktop, included in mobile menu)
-- Also update the CV link in the Contact section to point to the local file
+# Blog Page — WordPress-Ready with Placeholder Content
 
-## 2. Second Portrait on Hover
-- In `Hero.tsx`, add `portrait-4.jpg` as a second image layered on top of `portrait-1.jpg`
-- The second portrait is hidden by default and fades in on hover using CSS transitions (`opacity-0 hover:opacity-100` on the container with `group` class)
+Since you'll set up the WordPress connection later, I'll create a blog page now with static placeholder posts that matches your portfolio's design. When your WordPress site is ready, we can swap in the API integration.
 
-## 3. Social Media Links
-Add a social media row/section to the Contact section and the Footer with icons for:
-- **Telegram**: @maminre (link: `https://t.me/maminre`)
-- **Instagram**: @maminrezai (link: `https://instagram.com/maminrezai`)
-- **X/Twitter**: @AminReformist (link: `https://x.com/AminReformist`)
-- **WhatsApp**: `https://wa.me/qr/ERDSPOB6INRHP1`
-- **Phone**: +989150616788
-- **Eita**: maminrezai (link: `https://eitaa.com/maminrezai`)
-- **Email**: m.amin.rezai@gmail.com
+## What You'll Get
 
-Using Lucide icons where available and simple SVG icons or text labels for Telegram, Eita, and WhatsApp.
-
-## 4. Mobile Responsiveness Check
-- Ensure all sections use responsive grid (`grid-cols-1` on mobile, expanding on `md:`)
-- Ensure text sizes scale down on small screens
-- Ensure the portrait hover effect works on mobile (tap to toggle)
-- Ensure social media icons wrap properly on small screens
-
----
+- A new `/blog` route with a clean blog listing page
+- A `/blog/:slug` route for individual post detail pages
+- 3 placeholder blog posts with sample content
+- A "Blog" link added to the Navbar
+- Design consistent with the rest of your portfolio (Playfair Display headings, warm color scheme, cards)
+- Fully responsive layout (single column on mobile, grid on larger screens)
 
 ## Technical Details
 
-### Files to create:
-- **`public/docs/resume.pdf`** — copy from uploaded PDF
+### New files:
+- **`src/pages/Blog.tsx`** — Blog listing page with card grid showing post title, excerpt, date, and category
+- **`src/pages/BlogPost.tsx`** — Individual post page with back navigation
+- **`src/data/blogPosts.ts`** — Static placeholder posts data (easily replaceable with WordPress API later)
 
 ### Files to modify:
-- **`src/components/Navbar.tsx`** — add "Download CV" button linking to `/docs/resume.pdf`
-- **`src/components/sections/Hero.tsx`** — add portrait-4.jpg as hover overlay image
-- **`src/components/sections/Contact.tsx`** — add social media links row, update CV link to local file
-- **`src/components/Footer.tsx`** — add social media icon row
+- **`src/App.tsx`** — Add `/blog` and `/blog/:slug` routes
+- **`src/components/Navbar.tsx`** — Add "Blog" link to navigation (desktop and mobile)
+
+### Placeholder posts will include:
+1. "The Art of Literary Translation" 
+2. "Critical Theory in Modern Education"
+3. "Bridging Cultures Through Language"
+
+Each with a title, date, category, excerpt, and body text. When you're ready to connect WordPress, we'll replace the static data with `fetch` calls to your WordPress REST API (`/wp-json/wp/v2/posts`).
