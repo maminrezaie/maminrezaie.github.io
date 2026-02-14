@@ -32,7 +32,7 @@ const socials = [
   {
     label: "Eita",
     href: "https://eitaa.com/maminrezai",
-    icon: <span className="text-[7px] font-bold leading-none">Eita</span>,
+    icon: <span className="text-[9px] font-bold leading-none">Eita</span>,
   },
   {
     label: "Phone",
