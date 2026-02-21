@@ -1,16 +1,24 @@
 
 
-# Fix Hero Buttons + Bigger "Eita"
+# Add AcademiaPen.ir to Showcase
 
 ## Changes
 
-### 1. Fix Hero "Get in Touch" and "See My Work" buttons (`src/components/sections/Hero.tsx`)
-The `<a href="#contact">` and `<a href="#showcase">` links break with HashRouter because the browser navigates to `/#contact` which is interpreted as a route. Fix by converting them to `<button>` elements that use `scrollIntoView`, matching the Navbar's behavior.
+### 1. Copy the screenshot to the project
+Copy the uploaded screenshot to `public/images/screenshot-academiapen.png` to match the existing naming convention.
 
-- Replace the `<a href="#contact">` with a `<button>` that calls `document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })`
-- Replace the `<a href="#showcase">` with a `<button>` that does the same for `#showcase`
+### 2. Add entry to showcase data (`src/components/sections/Showcase.tsx`)
+Add a new project object to the `projects` array:
 
-### 2. Make "Eita" text bigger
-- **Footer** (`src/components/Footer.tsx`, line 35): Change `text-[7px]` to `text-[9px]`
-- **Contact** (`src/components/sections/Contact.tsx`, line 128): Change `text-[8px]` to `text-[10px]`
+```ts
+{
+  title: "AcademiaPen",
+  url: "https://academiapen.ir/",
+  description:
+    "A professional academic writing service for humanities sciences—papers and theses written by humans.",
+  image: "/images/screenshot-academiapen.png",
+}
+```
+
+This will appear as a fourth card in the showcase grid alongside the existing three stores. The grid already uses `md:grid-cols-3`, so we may want to adjust to `md:grid-cols-2 lg:grid-cols-4` or keep 3 columns and let the fourth wrap naturally. Keeping the existing 3-column layout is simplest—AcademiaPen will appear on a second row.
 
