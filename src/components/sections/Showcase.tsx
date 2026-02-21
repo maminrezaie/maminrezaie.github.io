@@ -31,6 +31,13 @@ const projects = [
       "A professional academic writing service for humanities sciences—papers and theses written by humans.",
     image: "/images/screenshot-academiapen.png",
   },
+  {
+    title: "Tarjome Land",
+    url: "https://tarjome-land.ir/",
+    description:
+      "An AI-free translation service, done by a master's degree in English.",
+    image: "/placeholder.svg",
+  },
 ];
 
 const Showcase = () => {
