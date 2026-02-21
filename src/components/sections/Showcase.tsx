@@ -24,6 +24,13 @@ const projects = [
       "Online shop with product browsing and a simple purchase flow—built to be fast and mobile friendly.",
     image: "/images/screenshot-gandomak.png",
   },
+  {
+    title: "AcademiaPen",
+    url: "https://academiapen.ir/",
+    description:
+      "A professional academic writing service for humanities sciences—papers and theses written by humans.",
+    image: "/images/screenshot-academiapen.png",
+  },
 ];
 
 const Showcase = () => {
